@@ -28,7 +28,7 @@
 .header__theme-menu-list{
   display: grid;
   list-style: none;
-  gap: 13px;
+  gap: 10px;
   align-items: center;
   justify-content: end;
 }
@@ -68,7 +68,8 @@
 
 .header__theme-menu-button_active{
   outline: 1px solid var(--theme-menu-item-color);
-  pointer-events: none
+  pointer-events: none;
+  outline-offset: -1px;
 }
 
 .header_title{
@@ -97,7 +98,7 @@
   color: var(--subtitle-text-color);
   font-size: 18px;
   font-weight: 700;
-  line-height: 23.4px;
+
 }
 
 .record{
@@ -262,6 +263,11 @@
 
   .header_text{
     grid-column: 2;
+  }
+
+  .record{
+    right: calc(2 * var(--indent-block));
+    top: calc(2 * var(--indent-block));
   }
 
   .corned::before, .corned::before{
