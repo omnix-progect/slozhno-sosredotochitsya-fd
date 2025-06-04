@@ -1,14 +1,16 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   inline-size: 100%;
+  background-image: var(--page-bg-image);
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-family),sans-serif;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
 .header{
-  background-image: url(../images/cover-image-dark.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: var(--indent-block);
   position: relative;
   display: grid;
@@ -31,34 +33,52 @@
   justify-content: end;
 }
 
+.header__theme-menu-item:has(.header__theme-menu-button:hover){
+  outline: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button:focus) {
+  border-bottom: 1px solid var(--theme-menu-item-color);
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button:focus-visible) {
+  border-bottom: 1px solid var(--theme-menu-item-color);
+}
+
+.header__theme-menu-button:focus-visible{
+  outline: none;
+}
+
+
+
 .header__theme-menu-button{
   display: grid;
   justify-content: center;
   background-color: transparent;
   border: none;
-  color: var(--accent-color);
+  color: var(--theme-menu-item-color);
   font-family: inherit;
   text-transform: lowercase;
-  font-weight: 400;
   padding: 0px 13px;
   font-style: normal;
   font-size: 18px;
   block-size: 26px;
 }
 
+
 .header__theme-menu-button_active{
-   outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--theme-menu-item-color);
+  pointer-events: none
 }
 
 .header_title{
   grid-column: span 2;
-  color: var(--title-color);
+  color: var(--h1-color);
 }
 
 .header_title h1{
-  text-shadow: 4px 4px 0 var(--accent-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  font-style: normal;
+  text-shadow: var(--h1-text-shadow);
+  font-size: var(--h1-font-size);
   font-weight: bold;
   line-height: 82.5%;
 }
@@ -74,9 +94,8 @@
 
 .title-decor{
   background-color: var(--accent-color);
-  color: #000028;
+  color: var(--subtitle-text-color);
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
 }
@@ -112,8 +131,8 @@
   display: block;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--corned-color);
+  border-left: 1px solid var(--corned-color);
 }
 
 .corned::after, .corned::after{
@@ -124,8 +143,8 @@
   display: block;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--corned-color);
+  border-right: 1px solid var(--corned-color);
 }
 
 .block_content{
@@ -134,15 +153,18 @@
   gap: 50px;
   background-color: var(--section-backround-color);
 }
+
 .main_content{
   display: grid;
   gap: 20px;
   align-items: start;
   justify-content: start;
 }
-.accent{
-  color: var(--accent-color);
+
+.section_title_color{
+  color: var(--section_title_color);
 }
+
 .content_name{
   inline-size: 100%;
   font-size: 18px;
@@ -161,6 +183,22 @@
   display: inline-block;
   text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color);
+
+}
+
+.content_text_link:hover{
+  border-bottom: 2px solid var(--section-text-color);
+}
+
+.content_text_link:focus{
+  outline-offset: 3px;
+  outline-color: inherit;
+}
+
+.content_text_link:focus-visible{
+  outline-offset: 3px;
+  outline-color: inherit;
+  border-radius: 0;
 }
 
 .about{
@@ -192,28 +230,26 @@
   padding: var(--indent-block);
   background-color: var(--section-backround-color);
   align-content: center;
-  min-block-size: 667px;
+  min-block-size: var(--footer-size);
   justify-content: center;
 }
 
 .item_focus_title{
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: var(--title-color);
+  color: var(--h2-color);
   font-weight: bold;
   line-height: 82.5%;
-  text-shadow: 2px 2px 0px var(--accent-color);
+  text-shadow: var(--h2-text-shadow);
 }
 
 @media (width >= 768px){
-  :root{
-    --indent-block: 20px;
-  }
   .header{
-    grid-template-rows: minmax(calc(462px - var(--indent-block)), auto) min-content minmax(calc(462px - var(--indent-block)), auto);
+    padding: calc(2 * var(--indent-block));
+    grid-template-rows: minmax(calc(462px - calc(2 * var(--indent-block))), auto) min-content minmax(calc(462px - calc(2 * var(--indent-block))), auto);
   }
 
   .header_title{
-    margin-left: calc(-1 * var(--indent-block));
+    margin-left: calc(-1 * calc(2 * var(--indent-block)));
   }
 
   .header_title h1{
@@ -228,8 +264,18 @@
     grid-column: 2;
   }
 
+  .corned::before, .corned::before{
+    bottom: calc(2 * var(--indent-block));
+    left: calc(2 * var(--indent-block));
+  }
+
+  .corned::after, .corned::after{
+    top: calc(2 * var(--indent-block));
+    right: calc(2 * var(--indent-block));
+  }
+
   .block_content{
-    padding: 60px var(--indent-block);
+    padding: 60px calc(2 * var(--indent-block));
     gap: 80px;
   }
 
@@ -290,13 +336,14 @@
   }
 
   .footer{
-    min-block-size: 1024px;
+    block-size: 1024px;
+    padding: calc(2 * var(--indent-block));
   }
 }
 
 @media (width >= 1024px){
   .header{
-    grid-template-rows: minmax(calc(319px - var(--indent-block)), auto) min-content minmax(calc(319px - var(--indent-block)), auto);
+    grid-template-rows: minmax(calc(319px - calc(2 * var(--indent-block))), auto) min-content minmax(calc(319px - calc(2 * var(--indent-block))), auto);
   }
 
   .header__theme-menu{
@@ -323,6 +370,6 @@
   }
 
   .footer{
-    min-block-size: 768px;
+    block-size: 768px;
   }
 }

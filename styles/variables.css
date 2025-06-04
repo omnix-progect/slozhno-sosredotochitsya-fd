@@ -3,9 +3,20 @@
   и их переопределение под различные устройства
 */
 :root{
+  --page-bg-image: url(../images/cover-image-dark.png);
+  --font-family:"IBM Plex mono";
   --accent-color: #FF0070;
+  --theme-menu-item-color:  #FF0070;
+  --h1-color: #DB00FF;
+  --h1-text-shadow: 4px 4px 0 #FF0070;
+  --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --subtitle-text-color: #000028;
   --indent-block: 10px;
   --section-text-color: #F1B2CE;
   --section-backround-color: #000028;
-  --title-color: #DB00FF;
+  --section_title_color: #FF0070;
+  --footer-size: 667px;
+  --h2-color: #DB00FF;
+  --h2-text-shadow: 2px 2px 0px #FF0070;
+  --corned-color: #FF0070;
 }
