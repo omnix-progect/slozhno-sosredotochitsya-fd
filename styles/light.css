@@ -15,7 +15,8 @@
   --theme-menu-item-color:  #353430;
   --h1-color: #FFC2E6;
   --h1-text-shadow: 4px 4px 0 #FF8DCB;
-  --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --subtitle-text-color: #000028;
   --indent-block: 10px;
   --section-text-color: #353430;

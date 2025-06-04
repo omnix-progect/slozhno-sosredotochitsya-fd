@@ -79,7 +79,7 @@
 
 .header_title h1{
   text-shadow: var(--h1-text-shadow);
-  font-size: var(--h1-font-size);
+  font-size: var(--font-size-mobile);
   font-weight: bold;
   line-height: 82.5%;
 }
@@ -254,7 +254,7 @@
   }
 
   .header_title h1{
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--font-size-desktop);
   }
 
   .header_text_position{
@@ -344,6 +344,10 @@
   .footer{
     block-size: 1024px;
     padding: calc(2 * var(--indent-block));
+  }
+
+  .item_focus_title{
+    font-size: var(--font-size-desktop);
   }
 }
 
