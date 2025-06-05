@@ -20,6 +20,7 @@
       auto
     );
   padding: var(--indent-block);
+  inline-size: 100%;
 }
 
 .header__theme-menu {
@@ -90,14 +91,13 @@
 }
 
 .header_text {
-  font-size: 18px;
   grid-column: 2;
+  font-size: 18px;
 }
 
 .title-decor {
   color: var(--subtitle-text-color);
   font-weight: 700;
-  font-size: 18px;
   background-color: var(--accent-color);
 }
 
@@ -124,7 +124,6 @@
   block-size: 9px;
 }
 
-.corned::before,
 .corned::before {
   content: "";
   position: absolute;
@@ -137,7 +136,6 @@
   block-size: 25px;
 }
 
-.corned::after,
 .corned::after {
   content: "";
   position: absolute;
@@ -215,7 +213,7 @@
   font-size: 18px;
 }
 
-.pictures_title{
+.pictures_title {
   font-size: 18px;
 }
 
@@ -252,10 +250,9 @@
 
 @media (width >= 768px) {
   .header {
-    grid-template-rows: minmax(
-        calc(462px - calc(2 * var(--indent-block))),
-        auto
-      ) min-content minmax(calc(462px - calc(2 * var(--indent-block))), auto);
+    grid-template-rows:
+      minmax(calc(462px - calc(2 * var(--indent-block))), auto)
+      min-content minmax(calc(462px - calc(2 * var(--indent-block))), auto);
     padding: calc(2 * var(--indent-block));
   }
 
@@ -280,13 +277,11 @@
     right: calc(2 * var(--indent-block));
   }
 
-  .corned::before,
   .corned::before {
     bottom: calc(2 * var(--indent-block));
     left: calc(2 * var(--indent-block));
   }
 
-  .corned::after,
   .corned::after {
     top: calc(2 * var(--indent-block));
     right: calc(2 * var(--indent-block));
@@ -307,7 +302,7 @@
     grid-column: 2 / 4;
   }
 
-  .content_text{
+  .content_text {
     word-spacing: -1px;
   }
 
@@ -370,10 +365,9 @@
 
 @media (width >= 1024px) {
   .header {
-    grid-template-rows: minmax(
-        calc(319px - calc(2 * var(--indent-block))),
-        auto
-      ) min-content minmax(calc(319px - calc(2 * var(--indent-block))), auto);
+    grid-template-rows:
+      minmax(calc(319px - calc(2 * var(--indent-block))), auto)
+      min-content minmax(calc(319px - calc(2 * var(--indent-block))), auto);
   }
 
   .header__theme-menu {
@@ -389,6 +383,16 @@
   .header_text {
     grid-column: 2;
     word-spacing: -1px;
+  }
+
+  .main_content {
+    row-gap: initial;
+    column-gap: initial;
+    gap: 20px;
+  }
+
+  .content_text{
+    word-spacing: -2px;
   }
 
   .reset-colums h3 {
