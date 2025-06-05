@@ -17,7 +17,7 @@
   --h1-text-shadow: 4px 4px 0 #ff8dcb;
   --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --subtitle-text-color: #000028;
+  --subtitle-text-color: #353430;
   --indent-block: 10px;
   --section-text-color: #353430;
   --section-backround-color: #fff1f7;
@@ -38,7 +38,7 @@
     --h1-text-shadow: 4px 4px 0 #ff8dcb;
     --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --subtitle-text-color: #000028;
+    --subtitle-text-color: #353430;
     --indent-block: 10px;
     --section-text-color: #353430;
     --section-backround-color: #fff1f7;
@@ -48,6 +48,14 @@
     --h2-text-shadow: 2px 2px 0px #ff0070;
     --corned-color: #353430;
     /* Дублируем переменные светлой темы */
+  }
+
+  .record {
+    display: none;
+  }
+
+  .header__theme-menu-item:has(.header__theme-menu-button:hover) {
+    outline: 1px solid rgba(50, 49, 45, 0.4);
   }
 }
 

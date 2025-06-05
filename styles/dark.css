@@ -28,6 +28,11 @@
   --corned-color: #ff0070;
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+
+.theme-dark .record {
+  display: flex;
+}
+
+.theme-dark .header__theme-menu-item:has(.header__theme-menu-button:hover) {
+  outline: 1px solid rgba(255, 0, 112, 0.4);
 }

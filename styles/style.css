@@ -6,6 +6,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--section-backround-color);
   inline-size: 100%;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
@@ -21,6 +22,7 @@
     );
   padding: var(--indent-block);
   inline-size: 100%;
+  block-size: 100vh;
 }
 
 .header__theme-menu {
@@ -35,6 +37,10 @@
   align-items: center;
   gap: 10px;
   list-style: none;
+}
+
+.header__theme-menu-item{
+  border: 1px solid transparent;
 }
 
 .header__theme-menu-item:has(.header__theme-menu-button:hover) {
@@ -76,9 +82,6 @@
 .header_title {
   grid-column: span 2;
   color: var(--h1-color);
-}
-
-.header_title h1 {
   font-weight: bold;
   font-size: var(--font-size-mobile);
   line-height: 82.5%;
@@ -172,6 +175,13 @@
   line-height: 23.5px;
   inline-size: 100%;
 }
+
+.content_conteiner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
 .content_text {
   padding-top: 10px;
   color: var(--section-text-color);
@@ -184,21 +194,21 @@
   display: inline-block;
   text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color);
+  border: 1px solid transparent;
 }
 
 .content_text_link:hover {
-  border-bottom: 2px solid var(--section-text-color);
+  border-bottom: 1px solid var(--section-text-color);
 }
 
 .content_text_link:focus {
-  outline-color: inherit;
-  outline-offset: 3px;
+  outline: none;
+  border: 1px solid var(--section-text-color);
 }
 
 .content_text_link:focus-visible {
-  border-radius: 0;
-  outline-color: inherit;
-  outline-offset: 3px;
+  outline: none;
+  border: 1px solid var(--section-text-color);
 }
 
 .about {
@@ -287,24 +297,26 @@
     right: calc(2 * var(--indent-block));
   }
 
+  .content_conteiner {
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
   .block_content {
     gap: 80px;
     padding: 60px calc(2 * var(--indent-block));
   }
 
   .main_content {
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 20px;
-    column-gap: 40px;
+    grid-template-columns: 236px 1fr 1fr;
   }
 
   .content {
     grid-column: 2 / 4;
   }
 
-  .content_text {
-    word-spacing: -1px;
-  }
 
   .reset-colums h3 {
     grid-column: 1;
@@ -382,17 +394,13 @@
 
   .header_text {
     grid-column: 2;
-    word-spacing: -1px;
   }
 
   .main_content {
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: initial;
     column-gap: initial;
     gap: 20px;
-  }
-
-  .content_text{
-    word-spacing: -2px;
   }
 
   .reset-colums h3 {
