@@ -35,7 +35,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
 }
 
@@ -378,7 +378,6 @@
 
   .header__theme-menu-list {
     flex-direction: row;
-    gap: 10px;
   }
 
   .header__theme-menu-button {
