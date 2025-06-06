@@ -28,11 +28,10 @@
   --corned-color: #ff0070;
 }
 
-
 .theme-dark .record {
   display: flex;
 }
 
-.theme-dark .header__theme-menu-item:has(.header__theme-menu-button:hover) {
+.theme-dark .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.4);
 }
