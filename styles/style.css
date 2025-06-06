@@ -1,12 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   font-family: var(--font-family), sans-serif;
+  background-color: var(--section-backround-color);
   background-image: var(--page-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: var(--section-backround-color);
   inline-size: 100%;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
@@ -39,7 +39,7 @@
   list-style: none;
 }
 
-.header__theme-menu-item{
+.header__theme-menu-item {
   border: 1px solid transparent;
 }
 
@@ -190,9 +190,9 @@
 
 .content_text_link {
   display: inline-block;
+  border: 1px solid transparent;
   text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color);
-  border: 1px solid transparent;
 }
 
 .content_text_link:hover {
@@ -200,13 +200,13 @@
 }
 
 .content_text_link:focus {
-  outline: none;
   border: 1px solid var(--section-text-color);
+  outline: none;
 }
 
 .content_text_link:focus-visible {
-  outline: none;
   border: 1px solid var(--section-text-color);
+  outline: none;
 }
 
 .about {
@@ -311,7 +311,7 @@
     grid-column: 2 / 4;
   }
 
-  .content-modificator{
+  .content-modificator {
     grid-column: 1 / 4;
   }
 
@@ -395,17 +395,17 @@
 
   .main_content {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
     row-gap: initial;
     column-gap: initial;
-    gap: 20px;
   }
 
-  .content_conteiner{
+  .content_conteiner {
     display: grid;
     grid-auto-columns: 1fr 1fr 1fr;
   }
 
-  .content-modificator{
+  .content-modificator {
     grid-column: initial;
   }
 
