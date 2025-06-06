@@ -49,9 +49,6 @@
 
 .header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--theme-menu-item-color);
-}
-
-.header__theme-menu-button:focus-visible {
   outline: none;
 }
 
